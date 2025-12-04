@@ -7,4 +7,3 @@ export function describeLastRound(lastRound: RoundResult | undefined): string {
 
   return `Round ${lastRound.roundIndex}: You served ${lastRound.playerCustomers} customer(s), earning $${lastRound.playerRevenue.toFixed(2)}. The competitor served ${lastRound.competitorCustomers} customer(s), and ${lastRound.noPurchaseCustomers} customer(s) did not buy from anyone.`;
 }
-

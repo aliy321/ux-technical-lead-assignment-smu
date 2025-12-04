@@ -8,14 +8,12 @@ import {
 import { useMemo, useState } from "react";
 
 export function useGameState() {
-  const [state, setState] = useState<GameState>(() =>
-    createInitialGameState()
-  );
+  const [state, setState] = useState<GameState>(() => createInitialGameState());
 
   const isGameOver = state.roundIndex >= state.maxRounds;
   const cumulative = useMemo(
     () => getCumulativeRevenues(state.history),
-    [state.history]
+    [state.history],
   );
   const totalPlayerRevenue =
     cumulative.player.length > 0
@@ -48,4 +46,3 @@ export function useGameState() {
     handleReset,
   };
 }
-
